@@ -1,4 +1,4 @@
-Writing subst following original kleene star grammar using map (see EOPL).
+Writing `replace` following original kleene star grammar using map (see EOPL).
 
 **Course**: [Principles of Programming Languages], Monsoon 2019<br>
 **Taught by**: Prof. Venkatesh Chopella

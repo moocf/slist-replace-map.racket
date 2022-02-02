@@ -1,20 +1,20 @@
 #lang racket
 
-;; subst: Symbol x Symbol x SList -> SList
-;; usage: (subst new old slist) = substitute symbol in a symbol list
-(define subst
+;; slist.replace-map: Symbol x Symbol x SList -> SList
+;; usage: (slist.replace-map new old slist) = substitute symbol in a symbol list
+(define slist.replace-map
   (lambda (new old slist)
     (map (lambda (sexp)
-           (subst-sexp new old sexp))
+           (slist.replace-map-sexp new old sexp))
          slist)))
 
-(define subst-sexp
+(define slist.replace-map-sexp
   (lambda (new old sexp)
     (if (not (list? sexp))
         (if (eqv? old sexp)
             new
             sexp)
-        (subst new old sexp))))
+        (slist.replace-map new old sexp))))
 
 ; s-list ::= ({s-exp}*)
 ; s-exp  ::= symbol | s-list
